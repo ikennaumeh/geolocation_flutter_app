@@ -12,24 +12,7 @@ part of 'permission_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PermissionStateTearOff {
-  const _$PermissionStateTearOff();
-
-  _PermissionState call(
-      {required bool isLocationPermissionGranted,
-      required bool isLocationServicesEnabled}) {
-    return _PermissionState(
-      isLocationPermissionGranted: isLocationPermissionGranted,
-      isLocationServicesEnabled: isLocationServicesEnabled,
-    );
-  }
-}
-
-/// @nodoc
-const $PermissionState = _$PermissionStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$PermissionState {
@@ -77,32 +60,32 @@ class _$PermissionStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PermissionStateCopyWith<$Res>
+abstract class _$$_PermissionStateCopyWith<$Res>
     implements $PermissionStateCopyWith<$Res> {
-  factory _$PermissionStateCopyWith(
-          _PermissionState value, $Res Function(_PermissionState) then) =
-      __$PermissionStateCopyWithImpl<$Res>;
+  factory _$$_PermissionStateCopyWith(
+          _$_PermissionState value, $Res Function(_$_PermissionState) then) =
+      __$$_PermissionStateCopyWithImpl<$Res>;
   @override
   $Res call({bool isLocationPermissionGranted, bool isLocationServicesEnabled});
 }
 
 /// @nodoc
-class __$PermissionStateCopyWithImpl<$Res>
+class __$$_PermissionStateCopyWithImpl<$Res>
     extends _$PermissionStateCopyWithImpl<$Res>
-    implements _$PermissionStateCopyWith<$Res> {
-  __$PermissionStateCopyWithImpl(
-      _PermissionState _value, $Res Function(_PermissionState) _then)
-      : super(_value, (v) => _then(v as _PermissionState));
+    implements _$$_PermissionStateCopyWith<$Res> {
+  __$$_PermissionStateCopyWithImpl(
+      _$_PermissionState _value, $Res Function(_$_PermissionState) _then)
+      : super(_value, (v) => _then(v as _$_PermissionState));
 
   @override
-  _PermissionState get _value => super._value as _PermissionState;
+  _$_PermissionState get _value => super._value as _$_PermissionState;
 
   @override
   $Res call({
     Object? isLocationPermissionGranted = freezed,
     Object? isLocationServicesEnabled = freezed,
   }) {
-    return _then(_PermissionState(
+    return _then(_$_PermissionState(
       isLocationPermissionGranted: isLocationPermissionGranted == freezed
           ? _value.isLocationPermissionGranted
           : isLocationPermissionGranted // ignore: cast_nullable_to_non_nullable
@@ -137,7 +120,7 @@ class _$_PermissionState extends _PermissionState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PermissionState &&
+            other is _$_PermissionState &&
             const DeepCollectionEquality().equals(
                 other.isLocationPermissionGranted,
                 isLocationPermissionGranted) &&
@@ -153,14 +136,14 @@ class _$_PermissionState extends _PermissionState {
 
   @JsonKey(ignore: true)
   @override
-  _$PermissionStateCopyWith<_PermissionState> get copyWith =>
-      __$PermissionStateCopyWithImpl<_PermissionState>(this, _$identity);
+  _$$_PermissionStateCopyWith<_$_PermissionState> get copyWith =>
+      __$$_PermissionStateCopyWithImpl<_$_PermissionState>(this, _$identity);
 }
 
 abstract class _PermissionState extends PermissionState {
   const factory _PermissionState(
-      {required bool isLocationPermissionGranted,
-      required bool isLocationServicesEnabled}) = _$_PermissionState;
+      {required final bool isLocationPermissionGranted,
+      required final bool isLocationServicesEnabled}) = _$_PermissionState;
   const _PermissionState._() : super._();
 
   @override
@@ -169,6 +152,6 @@ abstract class _PermissionState extends PermissionState {
   bool get isLocationServicesEnabled;
   @override
   @JsonKey(ignore: true)
-  _$PermissionStateCopyWith<_PermissionState> get copyWith =>
+  _$$_PermissionStateCopyWith<_$_PermissionState> get copyWith =>
       throw _privateConstructorUsedError;
 }
