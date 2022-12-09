@@ -5,16 +5,13 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'application_life_cycle_state.dart';
-
 part 'application_life_cycle_cubit.freezed.dart';
 
 @LazySingleton()
-class ApplicationLifeCycleCubit extends Cubit<ApplicationLifeCycleState>
-    with WidgetsBindingObserver {
+class ApplicationLifeCycleCubit extends Cubit<ApplicationLifeCycleState> with WidgetsBindingObserver {
   ApplicationLifeCycleCubit() : super(const ApplicationLifeCycleState.resumed()){
     WidgetsBinding.instance.addObserver(this);
   }
-
 
   @override
   Future<void> close() {
@@ -34,4 +31,5 @@ class ApplicationLifeCycleCubit extends Cubit<ApplicationLifeCycleState>
       emit(const ApplicationLifeCycleState.detached());
     }
   }
+
 }
