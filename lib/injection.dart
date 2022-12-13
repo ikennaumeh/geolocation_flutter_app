@@ -6,6 +6,6 @@ final getIt = GetIt.instance;
 
 @InjectableInit()
 void configureDependencies(String env){
-  $initGetIt(getIt, environment: env);
+  getIt.init(environment: env);
 }
 

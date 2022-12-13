@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => getIt<PermissionCubit>(),
+          lazy: false,
         ),
         BlocProvider(
           create: (context) => getIt<ApplicationLifeCycleCubit>(),

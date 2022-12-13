@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'permission_cubit.dart';
 
@@ -28,34 +28,37 @@ mixin _$PermissionState {
 abstract class $PermissionStateCopyWith<$Res> {
   factory $PermissionStateCopyWith(
           PermissionState value, $Res Function(PermissionState) then) =
-      _$PermissionStateCopyWithImpl<$Res>;
+      _$PermissionStateCopyWithImpl<$Res, PermissionState>;
+  @useResult
   $Res call({bool isLocationPermissionGranted, bool isLocationServicesEnabled});
 }
 
 /// @nodoc
-class _$PermissionStateCopyWithImpl<$Res>
+class _$PermissionStateCopyWithImpl<$Res, $Val extends PermissionState>
     implements $PermissionStateCopyWith<$Res> {
   _$PermissionStateCopyWithImpl(this._value, this._then);
 
-  final PermissionState _value;
   // ignore: unused_field
-  final $Res Function(PermissionState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLocationPermissionGranted = freezed,
-    Object? isLocationServicesEnabled = freezed,
+    Object? isLocationPermissionGranted = null,
+    Object? isLocationServicesEnabled = null,
   }) {
     return _then(_value.copyWith(
-      isLocationPermissionGranted: isLocationPermissionGranted == freezed
+      isLocationPermissionGranted: null == isLocationPermissionGranted
           ? _value.isLocationPermissionGranted
           : isLocationPermissionGranted // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLocationServicesEnabled: isLocationServicesEnabled == freezed
+      isLocationServicesEnabled: null == isLocationServicesEnabled
           ? _value.isLocationServicesEnabled
           : isLocationServicesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,31 +69,30 @@ abstract class _$$_PermissionStateCopyWith<$Res>
           _$_PermissionState value, $Res Function(_$_PermissionState) then) =
       __$$_PermissionStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool isLocationPermissionGranted, bool isLocationServicesEnabled});
 }
 
 /// @nodoc
 class __$$_PermissionStateCopyWithImpl<$Res>
-    extends _$PermissionStateCopyWithImpl<$Res>
+    extends _$PermissionStateCopyWithImpl<$Res, _$_PermissionState>
     implements _$$_PermissionStateCopyWith<$Res> {
   __$$_PermissionStateCopyWithImpl(
       _$_PermissionState _value, $Res Function(_$_PermissionState) _then)
-      : super(_value, (v) => _then(v as _$_PermissionState));
+      : super(_value, _then);
 
-  @override
-  _$_PermissionState get _value => super._value as _$_PermissionState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLocationPermissionGranted = freezed,
-    Object? isLocationServicesEnabled = freezed,
+    Object? isLocationPermissionGranted = null,
+    Object? isLocationServicesEnabled = null,
   }) {
     return _then(_$_PermissionState(
-      isLocationPermissionGranted: isLocationPermissionGranted == freezed
+      isLocationPermissionGranted: null == isLocationPermissionGranted
           ? _value.isLocationPermissionGranted
           : isLocationPermissionGranted // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLocationServicesEnabled: isLocationServicesEnabled == freezed
+      isLocationServicesEnabled: null == isLocationServicesEnabled
           ? _value.isLocationServicesEnabled
           : isLocationServicesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -121,21 +123,22 @@ class _$_PermissionState extends _PermissionState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PermissionState &&
-            const DeepCollectionEquality().equals(
-                other.isLocationPermissionGranted,
-                isLocationPermissionGranted) &&
-            const DeepCollectionEquality().equals(
-                other.isLocationServicesEnabled, isLocationServicesEnabled));
+            (identical(other.isLocationPermissionGranted,
+                    isLocationPermissionGranted) ||
+                other.isLocationPermissionGranted ==
+                    isLocationPermissionGranted) &&
+            (identical(other.isLocationServicesEnabled,
+                    isLocationServicesEnabled) ||
+                other.isLocationServicesEnabled == isLocationServicesEnabled));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isLocationPermissionGranted),
-      const DeepCollectionEquality().hash(isLocationServicesEnabled));
+      runtimeType, isLocationPermissionGranted, isLocationServicesEnabled);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PermissionStateCopyWith<_$_PermissionState> get copyWith =>
       __$$_PermissionStateCopyWithImpl<_$_PermissionState>(this, _$identity);
 }

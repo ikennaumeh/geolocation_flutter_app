@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-
 part 'application_life_cycle_state.dart';
 part 'application_life_cycle_cubit.freezed.dart';
 
-@LazySingleton()
+@lazySingleton
 class ApplicationLifeCycleCubit extends Cubit<ApplicationLifeCycleState> with WidgetsBindingObserver {
   ApplicationLifeCycleCubit() : super(const ApplicationLifeCycleState.resumed()){
     WidgetsBinding.instance.addObserver(this);
@@ -19,7 +18,7 @@ class ApplicationLifeCycleCubit extends Cubit<ApplicationLifeCycleState> with Wi
     return super.close();
   }
 
-  @override
+ @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if(state == AppLifecycleState.resumed){
       emit(const ApplicationLifeCycleState.resumed());

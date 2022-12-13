@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'application_life_cycle_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$ApplicationLifeCycleState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resumed,
-    TResult Function()? inactive,
-    TResult Function()? paused,
-    TResult Function()? detached,
+    TResult? Function()? resumed,
+    TResult? Function()? inactive,
+    TResult? Function()? paused,
+    TResult? Function()? detached,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$ApplicationLifeCycleState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Inactive value)? inactive,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Detached value)? detached,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Inactive value)? inactive,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Detached value)? detached,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,19 @@ mixin _$ApplicationLifeCycleState {
 abstract class $ApplicationLifeCycleStateCopyWith<$Res> {
   factory $ApplicationLifeCycleStateCopyWith(ApplicationLifeCycleState value,
           $Res Function(ApplicationLifeCycleState) then) =
-      _$ApplicationLifeCycleStateCopyWithImpl<$Res>;
+      _$ApplicationLifeCycleStateCopyWithImpl<$Res, ApplicationLifeCycleState>;
 }
 
 /// @nodoc
-class _$ApplicationLifeCycleStateCopyWithImpl<$Res>
+class _$ApplicationLifeCycleStateCopyWithImpl<$Res,
+        $Val extends ApplicationLifeCycleState>
     implements $ApplicationLifeCycleStateCopyWith<$Res> {
   _$ApplicationLifeCycleStateCopyWithImpl(this._value, this._then);
 
-  final ApplicationLifeCycleState _value;
   // ignore: unused_field
-  final $Res Function(ApplicationLifeCycleState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -94,13 +96,10 @@ abstract class _$$_ResumedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ResumedCopyWithImpl<$Res>
-    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res>
+    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res, _$_Resumed>
     implements _$$_ResumedCopyWith<$Res> {
   __$$_ResumedCopyWithImpl(_$_Resumed _value, $Res Function(_$_Resumed) _then)
-      : super(_value, (v) => _then(v as _$_Resumed));
-
-  @override
-  _$_Resumed get _value => super._value as _$_Resumed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -136,10 +135,10 @@ class _$_Resumed extends _Resumed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resumed,
-    TResult Function()? inactive,
-    TResult Function()? paused,
-    TResult Function()? detached,
+    TResult? Function()? resumed,
+    TResult? Function()? inactive,
+    TResult? Function()? paused,
+    TResult? Function()? detached,
   }) {
     return resumed?.call();
   }
@@ -173,10 +172,10 @@ class _$_Resumed extends _Resumed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Inactive value)? inactive,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Detached value)? detached,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Inactive value)? inactive,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Detached value)? detached,
   }) {
     return resumed?.call(this);
   }
@@ -211,14 +210,11 @@ abstract class _$$_InactiveCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InactiveCopyWithImpl<$Res>
-    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res>
+    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res, _$_Inactive>
     implements _$$_InactiveCopyWith<$Res> {
   __$$_InactiveCopyWithImpl(
       _$_Inactive _value, $Res Function(_$_Inactive) _then)
-      : super(_value, (v) => _then(v as _$_Inactive));
-
-  @override
-  _$_Inactive get _value => super._value as _$_Inactive;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -254,10 +250,10 @@ class _$_Inactive extends _Inactive {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resumed,
-    TResult Function()? inactive,
-    TResult Function()? paused,
-    TResult Function()? detached,
+    TResult? Function()? resumed,
+    TResult? Function()? inactive,
+    TResult? Function()? paused,
+    TResult? Function()? detached,
   }) {
     return inactive?.call();
   }
@@ -291,10 +287,10 @@ class _$_Inactive extends _Inactive {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Inactive value)? inactive,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Detached value)? detached,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Inactive value)? inactive,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Detached value)? detached,
   }) {
     return inactive?.call(this);
   }
@@ -328,13 +324,10 @@ abstract class _$$_PausedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PausedCopyWithImpl<$Res>
-    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res>
+    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res, _$_Paused>
     implements _$$_PausedCopyWith<$Res> {
   __$$_PausedCopyWithImpl(_$_Paused _value, $Res Function(_$_Paused) _then)
-      : super(_value, (v) => _then(v as _$_Paused));
-
-  @override
-  _$_Paused get _value => super._value as _$_Paused;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -370,10 +363,10 @@ class _$_Paused extends _Paused {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resumed,
-    TResult Function()? inactive,
-    TResult Function()? paused,
-    TResult Function()? detached,
+    TResult? Function()? resumed,
+    TResult? Function()? inactive,
+    TResult? Function()? paused,
+    TResult? Function()? detached,
   }) {
     return paused?.call();
   }
@@ -407,10 +400,10 @@ class _$_Paused extends _Paused {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Inactive value)? inactive,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Detached value)? detached,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Inactive value)? inactive,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Detached value)? detached,
   }) {
     return paused?.call(this);
   }
@@ -445,14 +438,11 @@ abstract class _$$_DetachedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DetachedCopyWithImpl<$Res>
-    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res>
+    extends _$ApplicationLifeCycleStateCopyWithImpl<$Res, _$_Detached>
     implements _$$_DetachedCopyWith<$Res> {
   __$$_DetachedCopyWithImpl(
       _$_Detached _value, $Res Function(_$_Detached) _then)
-      : super(_value, (v) => _then(v as _$_Detached));
-
-  @override
-  _$_Detached get _value => super._value as _$_Detached;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -488,10 +478,10 @@ class _$_Detached extends _Detached {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resumed,
-    TResult Function()? inactive,
-    TResult Function()? paused,
-    TResult Function()? detached,
+    TResult? Function()? resumed,
+    TResult? Function()? inactive,
+    TResult? Function()? paused,
+    TResult? Function()? detached,
   }) {
     return detached?.call();
   }
@@ -525,10 +515,10 @@ class _$_Detached extends _Detached {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Resumed value)? resumed,
-    TResult Function(_Inactive value)? inactive,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Detached value)? detached,
+    TResult? Function(_Resumed value)? resumed,
+    TResult? Function(_Inactive value)? inactive,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Detached value)? detached,
   }) {
     return detached?.call(this);
   }
