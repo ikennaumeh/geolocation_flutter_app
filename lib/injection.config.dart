@@ -7,6 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:clean_flutter/application/application_life_cycle/application_life_cycle_cubit.dart'
     as _i3;
+import 'package:clean_flutter/application/location/location_cubit.dart' as _i9;
 import 'package:clean_flutter/application/permission/permission_cubit.dart'
     as _i8;
 import 'package:clean_flutter/domain/location/i_location_service.dart' as _i4;
@@ -39,6 +40,10 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i8.PermissionCubit>(() => _i8.PermissionCubit(
           gh<_i6.IPermissionService>(),
           gh<_i3.ApplicationLifeCycleCubit>(),
+        ));
+    gh.factory<_i9.LocationCubit>(() => _i9.LocationCubit(
+          gh<_i4.ILocationService>(),
+          gh<_i8.PermissionCubit>(),
         ));
     return this;
   }
