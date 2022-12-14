@@ -1,6 +1,6 @@
 import 'location_permission_status.dart';
 
-abstract class IPermissionService{
+abstract class IPermissionService {
   //if the user is granted location permission at that time
   Future<bool> isLocationPermissionGranted();
   //The changes in location permission state
@@ -10,4 +10,8 @@ abstract class IPermissionService{
   Stream<bool> get locationServicesStatusStream;
   //Request location permission
   Future<LocationPermissionStatus> requestLocationPermission();
+  //Open location settings
+  Future<void> openLocationSettings();
+  //Open app settings
+  Future<void> openAppSettings();
 }

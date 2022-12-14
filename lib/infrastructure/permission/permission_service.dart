@@ -8,7 +8,8 @@ class PermissionService implements IPermissionService {
   @override
   Future<bool> isLocationPermissionGranted() async {
     final status = await Geolocator.checkPermission();
-    bool isGranted = status == LocationPermission.always || status == LocationPermission.whileInUse;
+    bool isGranted = status == LocationPermission.always ||
+        status == LocationPermission.whileInUse;
     return isGranted;
   }
 
@@ -18,8 +19,9 @@ class PermissionService implements IPermissionService {
   }
 
   @override
-  Stream<bool> get locationServicesStatusStream => Geolocator.getServiceStatusStream()
-      .map((serviceStatus) => serviceStatus == ServiceStatus.enabled);
+  Stream<bool> get locationServicesStatusStream =>
+      Geolocator.getServiceStatusStream()
+          .map((serviceStatus) => serviceStatus == ServiceStatus.enabled);
 
   @override
   Future<LocationPermissionStatus> requestLocationPermission() async {
@@ -34,5 +36,15 @@ class PermissionService implements IPermissionService {
     }
 
     return result;
+  }
+
+  @override
+  Future<void> openAppSettings() {
+    return Geolocator.openAppSettings();
+  }
+
+  @override
+  Future<void> openLocationSettings() {
+    return Geolocator.openLocationSettings();
   }
 }

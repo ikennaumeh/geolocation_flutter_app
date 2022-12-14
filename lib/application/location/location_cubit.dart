@@ -20,10 +20,10 @@ class LocationCubit extends Cubit<LocationState> {
   final ILocationService _locationService;
   final PermissionCubit _permissionCubit;
   final ApplicationLifeCycleCubit _applicationLifeCycleCubit;
-  late StreamSubscription<LocationModel> _userPositionSubscription;
-  late StreamSubscription<List<PermissionState>>
+  StreamSubscription<LocationModel>? _userPositionSubscription;
+  StreamSubscription<List<PermissionState>>?
       _permissionStatePairSubscription;
-  late StreamSubscription<List<ApplicationLifeCycleState>>
+  StreamSubscription<List<ApplicationLifeCycleState>>?
       _appLifecycleStatePairSubscription;
 
   LocationCubit(this._locationService, this._permissionCubit,
@@ -56,12 +56,12 @@ class LocationCubit extends Cubit<LocationState> {
       if (previous.isResumed != current.isResumed &&
           current.isResumed &&
           isLocationPermissionGrantedAndServicesEnabled) {
-        await _userPositionSubscription.cancel();
+        await _userPositionSubscription?.cancel();
         _userPositionSubscription =
             _locationService.positionStream.listen(_userPositionListener);
       } else if (previous.isResumed != current.isResumed &&
           !current.isResumed) {
-        await _userPositionSubscription.cancel();
+        await _userPositionSubscription?.cancel();
       }
     }
 
@@ -72,13 +72,13 @@ class LocationCubit extends Cubit<LocationState> {
     if (previous.isLocationPermissionGrantedAndServicesEnabled !=
             current.isLocationPermissionGrantedAndServicesEnabled &&
         current.isLocationPermissionGrantedAndServicesEnabled) {
-      await _userPositionSubscription.cancel();
+      await _userPositionSubscription?.cancel();
       _userPositionSubscription =
           _locationService.positionStream.listen(_userPositionListener);
     } else if (previous.isLocationPermissionGrantedAndServicesEnabled !=
             current.isLocationPermissionGrantedAndServicesEnabled &&
         !current.isLocationPermissionGrantedAndServicesEnabled) {
-      _userPositionSubscription.cancel();
+      _userPositionSubscription?.cancel();
     }
   }
 
@@ -88,9 +88,9 @@ class LocationCubit extends Cubit<LocationState> {
 
   @override
   Future<void> close() {
-    _userPositionSubscription.cancel();
-    _permissionStatePairSubscription.cancel();
-    _appLifecycleStatePairSubscription.cancel();
+    _userPositionSubscription?.cancel();
+    _permissionStatePairSubscription?.cancel();
+    _appLifecycleStatePairSubscription?.cancel();
     return super.close();
   }
 }

@@ -44,6 +44,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i9.LocationCubit>(() => _i9.LocationCubit(
           gh<_i4.ILocationService>(),
           gh<_i8.PermissionCubit>(),
+          gh<_i3.ApplicationLifeCycleCubit>(),
         ));
     return this;
   }
