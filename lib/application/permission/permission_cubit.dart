@@ -44,10 +44,10 @@ class PermissionCubit extends Cubit<PermissionState> {
     _appLifecyleSubscription = _applicationLifeCycleCubit.stream
         .startWith(_applicationLifeCycleCubit.state)
         .pairwise()
-        .listen(emitPermission);
+        .listen(_emitPermission);
   }
 
-  void emitPermission(List<ApplicationLifeCycleState> pair) async {
+  void _emitPermission(List<ApplicationLifeCycleState> pair) async {
     final previous = pair.first;
     final current = pair.last;
 
