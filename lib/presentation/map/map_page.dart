@@ -86,7 +86,8 @@ class MapPage extends StatelessWidget {
                         ),
                         MarkerLayerOptions(markers: [
                           Marker(
-                              point: LatLng(state.userLocation.latitude, state.userLocation.longitude),
+                              point: LatLng(state.userLocation.latitude,
+                                  state.userLocation.longitude),
                               height: 60,
                               width: 60,
                               builder: (context) {
@@ -121,17 +122,57 @@ class MapPage extends StatelessWidget {
   }
 }
 
-class UserMarker extends StatelessWidget {
+class UserMarker extends StatefulWidget {
   const UserMarker({super.key});
 
   @override
+  State<UserMarker> createState() => _UserMarkerState();
+}
+
+class _UserMarkerState extends State<UserMarker>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<double> sizeAnimation;
+
+  @override
+  void initState() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    sizeAnimation =
+        Tween<double>(begin: 45, end: 60).animate(CurvedAnimation(parent: animationController, curve: Curves.fastOutSlowIn));
+    animationController.repeat(reverse: true);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.black,
-        shape: BoxShape.circle,
+    return AnimatedBuilder(
+      animation: sizeAnimation,
+      builder: (context, child) {
+        return Center(
+          child: Container(
+              height: sizeAnimation.value,
+              width: sizeAnimation.value,
+              decoration: const BoxDecoration(
+                color: Colors.black,
+                shape: BoxShape.circle,
+              ),
+              child: child),
+        );
+      },
+      child: const Icon(
+        Icons.person_pin,
+        color: Colors.white,
+        size: 40,
       ),
-      child: const Icon(Icons.person_pin, color: Colors.white, size: 40,),
     );
   }
 }
